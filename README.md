@@ -1,5 +1,5 @@
 # DarkusRising - "Face your fears!""
-![Title Screen](DarkusRising/DarkusRising/DarkusRisingContent/Backgrounds/bkg_title.png)
+![Title Screen](https://raw.githubusercontent.com/darkmastermindz/DarkusRising/master/DarkusRising/DarkusRisingContent/Backgrounds/bkg_loading.png)
 - Refactored C# XNA code for 2018
 - It's now a Universal Cross-Platform App - Windows, macOS, and Linux!
 - Open sourced 2D Dungeon Crawler game built back in my high school days in 2014.
