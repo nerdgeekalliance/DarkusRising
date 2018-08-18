@@ -1,4 +1,4 @@
-# DarkusRising - "Face your fears!""
+# DarkusRising - "Face your fears!"
 ![Title Screen](https://raw.githubusercontent.com/darkmastermindz/DarkusRising/master/DarkusRising/DarkusRisingContent/Backgrounds/bkg_loading.png)
 - Refactored C# XNA code for 2018
 - It's now a Universal Cross-Platform App - Windows, macOS, and Linux!
