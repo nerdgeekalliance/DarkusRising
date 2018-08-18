@@ -1,15 +1,8 @@
 ﻿using DarkusRising.Input;
-using DarkusRising.Screens;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DarkusRising.Screens.GameScreens
 {
@@ -19,7 +12,7 @@ namespace DarkusRising.Screens.GameScreens
         #region vars
 
         private MenuItemComponents menuComponents;
-        private string[] menuItems = { "New Game", "Load Game", "Options", "Exit" };
+        private readonly string[] menuItems = { "New Game", "Load Game", "Options", "Exit" };
         private Background background;
         private SpriteFont spriteFont;
         private ScreenManager screenManager;

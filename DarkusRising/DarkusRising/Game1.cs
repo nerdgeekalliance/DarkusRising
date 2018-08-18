@@ -1,23 +1,16 @@
-using DarkusRising.Input;
+﻿using DarkusRising.Input;
 using DarkusRising.Screens;
 using DarkusRising.Screens.GameScreens;
 using DarkusRising.Screens.Rooms;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DarkusRising
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        private GraphicsDeviceManager graphics;
+        private readonly GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
         public static Vector2 viewPort;
 
@@ -33,7 +26,7 @@ namespace DarkusRising
         #endregion GameScreens
 
         //public OptionsScreen options;
-        private ScreenManager screenManager;
+        private readonly ScreenManager screenManager;
 
         public float fps;
         public float updateInterval = 1.0f;
@@ -43,28 +36,28 @@ namespace DarkusRising
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
+            Content.RootDirectory = "DarkusRising";
 
-            #region Screen Properties
+            //#region Screen Properties
 
             IsMouseVisible = true;
             viewPort = new Vector2(1024, 832);
-            this.graphics.PreferredBackBufferWidth = (int)viewPort.X;
-            this.graphics.PreferredBackBufferHeight = (int)viewPort.Y;
-            this.graphics.IsFullScreen = false;
+            graphics.PreferredBackBufferWidth = (int)viewPort.X;
+            graphics.PreferredBackBufferHeight = (int)viewPort.Y;
+            graphics.IsFullScreen = false;
 
-            #endregion Screen Properties
+            //#endregion Screen Properties
 
-            #region Game Components
+            //#region Game Components
 
             Components.Add(new InputHandler(this));
-            Components.Add(screenManager);
+            //Components.Add(screenManager);
 
-            #endregion Game Components
+            //#endregion Game Components
 
-            #region GameScreens
+            //#region GameScreens
 
-            //Allows the use of screenManager.ChangeScreens(gameRef.room102);
+            ////Allows the use of screenManager.ChangeScreens(gameRef.room102);
 
             screenManager = new ScreenManager(this);
             startmenu = new StartMenu(this, screenManager);
@@ -72,7 +65,7 @@ namespace DarkusRising
             room101 = new Room101(this, screenManager);
             room102 = new Room102(this, screenManager);
 
-            #endregion GameScreens
+            //#endregion GameScreens
 
             screenManager.ChangeScreens(startmenu);
             //optionsScreen = new optionsScreen(this, screenManager);
@@ -82,7 +75,7 @@ namespace DarkusRising
 
         protected override void Initialize()
         {
-            Window.Title = "CheifDarkChaos Presents: 'Darkus Rising' v0.0.1.0            ";
+            Window.Title = "CheifDarkChaos Presents: 'Darkus Rising' v0.0.1.0";
 
             base.Initialize();
         }
@@ -101,7 +94,9 @@ namespace DarkusRising
         {
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            {
+                Exit();
+            }
 
             #region FPS Counter Draw
 
@@ -115,7 +110,7 @@ namespace DarkusRising
 #if XBOX360
                 System.Diagnostics.Debug.WriteLine("FPS: " + fps.ToString());
 #else
-                this.Window.Title = "CheifDarkChaos Presents: 'Darkus Rising' v0.0.1.0  |  FPS: " + String.Format("{0:0.00}", fps);
+                Window.Title = "CheifDarkChaos Presents: 'Darkus Rising' v0.0.1.0  |  FPS: " + string.Format("{0:0.00}", fps);
 #endif
                 frameCount = 0;
                 timeSinceLastUpdate -= updateInterval;

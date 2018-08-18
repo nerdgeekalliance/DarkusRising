@@ -1,13 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DarkusRising.Input
 {
@@ -29,29 +22,17 @@ namespace DarkusRising.Input
 
         #region Keyboard Property Region
 
-        public static KeyboardState KeyboardState
-        {
-            get { return keyboardState; }
-        }
+        public static KeyboardState KeyboardState => keyboardState;
 
-        public static KeyboardState LastKeyboardState
-        {
-            get { return lastKeyboardState; }
-        }
+        public static KeyboardState LastKeyboardState => lastKeyboardState;
 
         #endregion Keyboard Property Region
 
         #region Game Pad Property Region
 
-        public static GamePadState[] GamePadStates
-        {
-            get { return gamePadStates; }
-        }
+        public static GamePadState[] GamePadStates => gamePadStates;
 
-        public static GamePadState[] LastGamePadStates
-        {
-            get { return lastGamePadStates; }
-        }
+        public static GamePadState[] LastGamePadStates => lastGamePadStates;
 
         #endregion Game Pad Property Region
 
@@ -65,7 +46,9 @@ namespace DarkusRising.Input
             gamePadStates = new GamePadState[Enum.GetValues(typeof(PlayerIndex)).Length];
 
             foreach (PlayerIndex index in Enum.GetValues(typeof(PlayerIndex)))
+            {
                 gamePadStates[(int)index] = GamePad.GetState(index);
+            }
         }
 
         #endregion Constructor Region
@@ -84,7 +67,9 @@ namespace DarkusRising.Input
 
             lastGamePadStates = (GamePadState[])gamePadStates.Clone();
             foreach (PlayerIndex index in Enum.GetValues(typeof(PlayerIndex)))
+            {
                 gamePadStates[(int)index] = GamePad.GetState(index);
+            }
 
             base.Update(gameTime);
         }

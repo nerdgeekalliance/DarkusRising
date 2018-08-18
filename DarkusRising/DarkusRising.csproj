@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EB886616-DD5C-4240-8685-2B2FC8B10611}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DarkusRising</RootNamespace>
+    <AssemblyName>DarkusRising</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>DesktopGL</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LINUX</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;LINUX</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DarkusRising\Animation\AnimatedSprite.cs" />
+    <Compile Include="DarkusRising\Animation\Animation.cs" />
+    <Compile Include="DarkusRising\Background\Background.cs" />
+    <Compile Include="DarkusRising\Characters\AttributePair.cs" />
+    <Compile Include="DarkusRising\Characters\Character.cs" />
+    <Compile Include="DarkusRising\Characters\Player.cs" />
+    <Compile Include="DarkusRising\Controls\Control.cs" />
+    <Compile Include="DarkusRising\Controls\ControlManager.cs" />
+    <Compile Include="DarkusRising\EventArguments\ScreenEventArgs.cs" />
+    <Compile Include="DarkusRising\Game1.cs" />
+    <Compile Include="DarkusRising\Input\InputHandler.cs" />
+    <Compile Include="DarkusRising\Music Controller\MusicScore.cs" />
+    <Compile Include="DarkusRising\Screens\GameScreens\GameOver.cs" />
+    <Compile Include="DarkusRising\Screens\GameScreens\LoadingScreen.cs" />
+    <Compile Include="DarkusRising\Screens\GameScreens\MenuItemComponents.cs" />
+    <Compile Include="DarkusRising\Screens\GameScreens\StartMenu.cs" />
+    <Compile Include="DarkusRising\Screens\Rooms\Floor1\Room101.cs" />
+    <Compile Include="DarkusRising\Screens\Rooms\Floor1\Room102.cs" />
+    <Compile Include="DarkusRising\Screens\Rooms\Room.cs" />
+    <Compile Include="DarkusRising\Screens\Screen.cs" />
+    <Compile Include="DarkusRising\Screens\ScreenManager.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon.ico" />
+    <EmbeddedResource Include="Icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\SDL2.dll">
+      <Link>x86\SDL2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\SDL2.dll">
+      <Link>x64\SDL2.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\soft_oal.dll">
+      <Link>x86\soft_oal.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\soft_oal.dll">
+      <Link>x64\soft_oal.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libSDL2-2.0.so.0">
+      <Link>x86\libSDL2-2.0.so.0</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libSDL2-2.0.so.0">
+      <Link>x64\libSDL2-2.0.so.0</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x86\libopenal.so.1">
+      <Link>x86\libopenal.so.1</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\x64\libopenal.so.1">
+      <Link>x64\libopenal.so.1</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libSDL2-2.0.0.dylib">
+      <Link>libSDL2-2.0.0.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\libopenal.1.dylib">
+      <Link>libopenal.1.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll.config">
+      <Link>MonoGame.Framework.dll.config</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="app.manifest" />
+    <None Include="DarkusRisingContent\DarkusRisingContent.mgcb" />
+    <None Include="DarkusRisingContent\Fonts\Loading\LoadingFact.spritefont" />
+    <None Include="DarkusRisingContent\Fonts\Loading\LoadingTitle.spritefont" />
+    <None Include="DarkusRisingContent\Fonts\Menu\MenuFont.spritefont" />
+    <None Include="DarkusRisingContent\Sprites\Characters\JohnPierre-Walk.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DarkusRisingContent\Backgrounds\bkg_loading.png" />
+    <Content Include="DarkusRisingContent\Backgrounds\bkg_title.png" />
+    <Content Include="DarkusRisingContent\Backgrounds\Rooms\Floor1\bkg_RoomA.png" />
+    <Content Include="DarkusRisingContent\Music\01Score\IntoHisLair.mp3" />
+    <Content Include="DarkusRisingContent\Music\DarkusRisingIntro.wav" />
+    <Content Include="DarkusRisingContent\Sprites\Characters\JohnPierre-Attack.png" />
+    <Content Include="DarkusRisingContent\Sprites\Characters\JohnPierre-Walk.png" />
+    <Content Include="DarkusRisingContent\Sprites\Characters\MobSkel.png" />
+    <Content Include="DarkusRisingContent\Sprites\Effects\BloodDamage.png" />
+    <Content Include="DarkusRisingContent\Sprites\GUI\Door1Locked.png" />
+    <Content Include="DarkusRisingContent\Sprites\GUI\Door1Unlocked.png" />
+    <Content Include="DarkusRisingContent\Sprites\sprS_thief.png" />
+    <Content Include="Finale Resources\Backgrounds\bkg_Loading.png" />
+    <Content Include="Finale Resources\Character\JohnPierre-attack.png" />
+    <Content Include="Finale Resources\Character\JohnPierre-right.png" />
+    <Content Include="Finale Resources\Character\MobSkel-Right.png" />
+    <Content Include="Finale Resources\Character\MobSkel.png" />
+    <Content Include="Finale Resources\GameObjects\BloodDamage.png" />
+    <Content Include="Finale Resources\GameObjects\Bomb.png" />
+    <Content Include="Finale Resources\GameObjects\Potion-Health.png" />
+    <Content Include="Finale Resources\GameObjects\Potion-Mystery.png" />
+    <Content Include="Finale Resources\GameObjects\spr_boulder.png" />
+    <Content Include="Finale Resources\GameObjects\spr_explosion.png" />
+    <Content Include="Finale Resources\GameObjects\spr_rocks.png" />
+    <Content Include="Finale Resources\GUI\Door1Locked.png" />
+    <Content Include="Finale Resources\GUI\Door1Unlocked.png" />
+    <Content Include="Finale Resources\Into his Lair.mp3" />
+    <Content Include="tempresources\bkg_loading.jpg" />
+    <Content Include="tempresources\Game.bmp" />
+    <Content Include="tempresources\Game1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
