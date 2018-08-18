@@ -1,13 +1,6 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace DarkusRising.Controls
 {
@@ -40,25 +33,25 @@ namespace DarkusRising.Controls
 
         public string Name
         {
-            get { return name; }
-            set { name = value; }
+            get => name;
+            set => name = value;
         }
 
         public string Text
         {
-            get { return text; }
-            set { text = value; }
+            get => text;
+            set => text = value;
         }
 
         public Vector2 Size
         {
-            get { return size; }
-            set { size = value; }
+            get => size;
+            set => size = value;
         }
 
         public Vector2 Position
         {
-            get { return position; }
+            get => position;
             set
             {
                 position = value;
@@ -68,50 +61,50 @@ namespace DarkusRising.Controls
 
         public object Value
         {
-            get { return value; }
-            set { this.value = value; }
+            get => value;
+            set => this.value = value;
         }
 
         public bool HasFocus
         {
-            get { return hasFocus; }
-            set { hasFocus = value; }
+            get => hasFocus;
+            set => hasFocus = value;
         }
 
         public bool Enabled
         {
-            get { return enabled; }
-            set { enabled = value; }
+            get => enabled;
+            set => enabled = value;
         }
 
         public bool Visible
         {
-            get { return visible; }
-            set { visible = value; }
+            get => visible;
+            set => visible = value;
         }
 
         public bool TabStop
         {
-            get { return tabStop; }
-            set { tabStop = value; }
+            get => tabStop;
+            set => tabStop = value;
         }
 
         public SpriteFont SpriteFont
         {
-            get { return spriteFont; }
-            set { spriteFont = value; }
+            get => spriteFont;
+            set => spriteFont = value;
         }
 
         public Color Color
         {
-            get { return color; }
-            set { color = value; }
+            get => color;
+            set => color = value;
         }
 
         public string Type
         {
-            get { return type; }
-            set { type = value; }
+            get => type;
+            set => type = value;
         }
 
         #endregion Property Region
@@ -141,10 +134,7 @@ namespace DarkusRising.Controls
 
         protected virtual void OnSelected(EventArgs e)
         {
-            if (Selected != null)
-            {
-                Selected(this, e);
-            }
+            Selected?.Invoke(this, e);
         }
 
         #endregion Virtual Methods

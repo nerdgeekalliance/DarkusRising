@@ -1,14 +1,7 @@
 using DarkusRising.EventArguments;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace DarkusRising.Screens
 {
@@ -36,26 +29,19 @@ namespace DarkusRising.Screens
             drawOrder = startDrawOrder;
         }
 
-        public Screen CurrentScreen
-        {
-            //Looking at the screen to the top of the stack without removing it from the stack
-            get { return screens.Peek(); }
-        }
+        public Screen CurrentScreen => screens.Peek();
 
         public void PopScreen()
         {
             RemoveScreen();
             drawOrder = drawOrderInc;
 
-            if (OnScreenChange != null)
-            {
-                OnScreenChange(this, new ScreenEventArgs(screens.Peek()));
-            }
+            OnScreenChange?.Invoke(this, new ScreenEventArgs(screens.Peek()));
         }
 
         public void RemoveScreen() //Part of PopScreen()
         {
-            Screen screen = (Screen)screens.Peek();
+            Screen screen = screens.Peek();
             //Shows or Hides the screen
             OnScreenChange -= screen.ScreenChange;
             //Actual Removal of Screen
@@ -95,7 +81,9 @@ namespace DarkusRising.Screens
             AddScreen(newScreen);
 
             if (OnScreenChange != null)
+            {
                 OnScreenChange += newScreen.ScreenChange;
+            }
         }
     }
 }

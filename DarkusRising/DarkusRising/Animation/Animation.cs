@@ -1,8 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DarkusRising.Animation
 {
@@ -42,48 +39,43 @@ namespace DarkusRising.Animation
 
         private Animation(Animation animation)
         {
-            this.frames = animation.frames;
+            frames = animation.frames;
             framesPerSecond = 5;
         }
 
         public int FramesPerSecond
         {
-            get { return framesPerSecond; }
+            get => framesPerSecond;
             set
             {
                 if (value < 1)
+                {
                     framesPerSecond = 1;
+                }
                 else if (value > 60)
+                {
                     framesPerSecond = 60;
+                }
                 else
+                {
                     framesPerSecond = value;
+                }
+
                 frameLength = TimeSpan.FromSeconds(1 / (double)framesPerSecond);
             }
         }
 
-        public Rectangle CurrentFramerect
-        {
-            get { return frames[currentFrame]; }
-        }
+        public Rectangle CurrentFramerect => frames[currentFrame];
 
         public int CurrentFrame
         {
-            get { return currentFrame; }
-            set
-            {
-                currentFrame = (int)MathHelper.Clamp(value, 0, frames.Length - 1);
-            }
+            get => currentFrame;
+            set => currentFrame = MathHelper.Clamp(value, 0, frames.Length - 1);
         }
 
-        public int FrameWidth
-        {
-            get { return frameWidth; }
-        }
+        public int FrameWidth => frameWidth;
 
-        public int FrameHeight
-        {
-            get { return frameHeight; }
-        }
+        public int FrameHeight => frameHeight;
 
         public void Update(GameTime gameTime)
         {
@@ -103,11 +95,12 @@ namespace DarkusRising.Animation
 
         public object Clone()
         {
-            Animation animationClone = new Animation(this);
-
-            animationClone.frames = this.frames;
-            animationClone.frameWidth = this.frameWidth;
-            animationClone.frameHeight = this.frameHeight;
+            Animation animationClone = new Animation(this)
+            {
+                frames = frames,
+                frameWidth = frameWidth,
+                frameHeight = frameHeight
+            };
             animationClone.Reset();
 
             return animationClone;

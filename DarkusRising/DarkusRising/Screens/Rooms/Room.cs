@@ -1,14 +1,9 @@
 ﻿using DarkusRising.Animation;
-using DarkusRising.Characters;
 using DarkusRising.Input;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace DarkusRising.Screens.Rooms
 {
@@ -16,7 +11,7 @@ namespace DarkusRising.Screens.Rooms
     {
         #region vars
 
-        private ScreenManager manager;
+        private readonly ScreenManager manager;
         private Background background;
         private SpriteBatch spriteBatch;
         private AnimatedSprite sprite;
@@ -40,26 +35,26 @@ namespace DarkusRising.Screens.Rooms
 
         public PlayerIndex PlayerIndex
         {
-            get { return playerIndex; }
-            set { playerIndex = value; }
+            get => playerIndex;
+            set => playerIndex = value;
         }
 
-        public String RoomSelect
+        public string RoomSelect
         {
-            get { return roomSelect; }
-            set { roomSelect = value; }
+            get => roomSelect;
+            set => roomSelect = value;
         }
 
-        public String FloorSelect
+        public string FloorSelect
         {
-            get { return floorSelect; }
-            set { floorSelect = value; }
+            get => floorSelect;
+            set => floorSelect = value;
         }
 
         public Vector2 PlayerPos
         {
-            get { return playerPos; }
-            set { playerPos = value; }
+            get => playerPos;
+            set => playerPos = value;
         }
 
         #region XNA Methods
@@ -84,9 +79,11 @@ namespace DarkusRising.Screens.Rooms
             animation = new Animation.Animation(9, sprS_PierreWalk.Width / 9, sprS_PierreWalk.Height / 2, 0, 0);
             animations.Add(AnimationKey.Right, animation);
 
-            sprite = new AnimatedSprite(sprS_PierreWalk, animations);
-            sprite.Position = playerPos;
-            sprite.Speed = 2f;
+            sprite = new AnimatedSprite(sprS_PierreWalk, animations)
+            {
+                Position = playerPos,
+                Speed = 2f
+            };
             base.LoadContent();
         }
 

@@ -1,28 +1,25 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkusRising", "DarkusRising\DarkusRising\DarkusRising.csproj", "{85402BDD-4B37-4484-9BCF-8A98F01AD303}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkusRisingContent", "DarkusRising\DarkusRisingContent\DarkusRisingContent.contentproj", "{594CF0B5-E2F8-4913-97D3-557EC5197541}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkusRising", "DarkusRising\DarkusRising.csproj", "{EB886616-DD5C-4240-8685-2B2FC8B10611}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{85402BDD-4B37-4484-9BCF-8A98F01AD303}.Debug|x86.ActiveCfg = Debug|x86
-		{85402BDD-4B37-4484-9BCF-8A98F01AD303}.Debug|x86.Build.0 = Debug|x86
-		{85402BDD-4B37-4484-9BCF-8A98F01AD303}.Release|x86.ActiveCfg = Release|x86
-		{85402BDD-4B37-4484-9BCF-8A98F01AD303}.Release|x86.Build.0 = Release|x86
-		{594CF0B5-E2F8-4913-97D3-557EC5197541}.Debug|x86.ActiveCfg = Debug|x86
-		{594CF0B5-E2F8-4913-97D3-557EC5197541}.Release|x86.ActiveCfg = Release|x86
+		{EB886616-DD5C-4240-8685-2B2FC8B10611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB886616-DD5C-4240-8685-2B2FC8B10611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB886616-DD5C-4240-8685-2B2FC8B10611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB886616-DD5C-4240-8685-2B2FC8B10611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {277A35E0-2285-4741-8054-42CAA1D02440}
 	EndGlobalSection
 EndGlobal
